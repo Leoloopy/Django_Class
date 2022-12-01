@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+    {% block content %}
+        <h1>Publisher Index</h1>
+        <ul>
+            {% for publisher in publishers %}
+{#                <l1><a href="{% url 'publisher-details' pk=publisher.id %}">#}
+{#                    {{ publisher.name }} - {{ publisher.email }}</a>#}
+{#                </l1><br>#}
+                <a href="{{ publisher.get_absolute_url }}">
+                    {{ publisher.name }} - {{ publisher.email }}<br>
+                </a>
+            {% endfor %}
+        </ul>
+    {% endblock %}

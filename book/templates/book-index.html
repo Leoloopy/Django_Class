@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Book Index</h1>
+    <ul>
+    {% for bk in book %}
+        <li>
+            <a href="{{ bk.get_absolute_url }}" >
+            {{ bk.title }} - {{ bk.price }} -- {{ bk.publisher.name }}
+        </a>
+
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

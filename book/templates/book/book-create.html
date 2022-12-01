@@ -8,6 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-
+<form method="post">
+    {% for field in form %}
+        <div>
+    {{ field.label_tag }}
+    {{ field }}
+    {{ field.errors}}
+        </div>
+    {% endfor %}
+    <button>submit</button>
+    {% csrf_token %}
+</form>
 </body>
 </html>
